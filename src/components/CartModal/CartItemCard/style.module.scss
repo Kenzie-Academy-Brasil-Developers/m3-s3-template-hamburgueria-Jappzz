@@ -1,0 +1,22 @@
+.list__container{
+    display: flex;
+}
+
+.product__info{
+    width: 100%;
+    display: flex;
+    gap: 0.625rem;
+
+    & > img{
+        width: 55px;
+        background-color: var(--grey-1);
+        padding: 13px;
+    }
+}
+
+.button{
+color: var(--grey-4);
+    background-color: transparent;
+    height: min-content;
+    border: none;
+}

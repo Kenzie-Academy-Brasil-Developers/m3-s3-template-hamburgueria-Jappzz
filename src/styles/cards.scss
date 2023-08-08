@@ -1,0 +1,52 @@
+.list__container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+    margin-top: 1.0625rem;
+    padding: 0px 7.5rem;
+}
+
+.list__card{
+    border: 2px solid var(--grey-1);
+    width: 18.75rem;
+    height: 21.875rem;
+    border-radius: 5px;
+    :focus{
+        background-color: var(--color-primary);
+    }
+}
+
+
+
+.card__img{
+    background-color: var(--grey-0);
+    text-align: center;
+
+    img{
+        width: 10rem;
+        height: 10rem;
+    }
+}
+
+.card__content{
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+
+    .heading{
+        height: 2.5rem;
+    }
+    .caption{
+        height: 1.25rem;
+        margin-bottom: 0.625rem;
+    }
+    .price{
+        height: 1.5rem;
+        margin-bottom: 0.875rem;
+    }
+
+    button{
+        display: flex;
+        max-width: fit-content  ;
+    }
+}

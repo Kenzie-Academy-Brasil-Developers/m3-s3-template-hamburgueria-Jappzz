@@ -1,0 +1,11 @@
+.button{
+    padding: 10px 20px;
+    cursor: pointer;
+
+    &.grey{
+        background-color: var(--grey-4);
+        border: none;
+        border-radius: 8px;
+        color: white;
+    }
+}
