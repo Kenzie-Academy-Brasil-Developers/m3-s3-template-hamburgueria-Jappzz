@@ -1,6 +1,6 @@
-import { useState } from "react";
-import Logo from "../../assets/Logo.svg";
-import { MdSearch, MdShoppingCart } from "react-icons/md";
+import { useState } from "react"
+import Logo from "../../assets/Logo.svg"
+import { MdSearch, MdShoppingCart } from "react-icons/md"
 import styles from "../Header/style.module.scss"
 
 export const Header = ({ count, setIsVisible, setSearch }) => {
@@ -11,7 +11,6 @@ export const Header = ({ count, setIsVisible, setSearch }) => {
       setValue("")
 
    }
-   //quando atualiza a pagina ele fica uma estilização ja pronta com o carrinho e imagem na mesma div pois unica maneira que vi de estilizar e o window.innerWidth ele nao atualiza conforme a pagina vai aumentando
    return (
       <>
          {window.innerWidth < 800 ?
@@ -31,7 +30,6 @@ export const Header = ({ count, setIsVisible, setSearch }) => {
                <form className={styles.form__container}
                   onSubmit={submit}>
                   <input
-                     required
                      placeholder="Digitar Pesquisa"
                      type="text"
                      value={value}
@@ -56,7 +54,6 @@ export const Header = ({ count, setIsVisible, setSearch }) => {
                   <form className={styles.form__container}
                      onSubmit={submit}>
                      <input
-                        required
                         placeholder="Digitar Pesquisa"
                         type="text"
                         value={value}

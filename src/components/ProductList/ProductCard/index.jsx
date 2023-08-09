@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 export const ProductCard = ({ product, addProductCart }) => {
     return (
         <li className="list__card" >
@@ -15,7 +13,7 @@ export const ProductCard = ({ product, addProductCart }) => {
                     className="caption">{product.category}
                 </span>
                 <span
-                    className="body green price">{product.price.toLocaleString('pt-BR', { style: "currency", currency: "BRL" })}
+                    className="body green price">{product.price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
                 </span>
                 <button
                     className="button grey body " onClick={() => addProductCart(product)}>Adicionar
@@ -24,4 +22,3 @@ export const ProductCard = ({ product, addProductCart }) => {
         </li>
     )
 }
-//preciso colocar click no list e quando eu clicar no list ele vai ficar verde e quando eu clicar em outro eu verifico se algum ja esta com focused true eu primeiro desabilito e coloco focused ao que cliquei

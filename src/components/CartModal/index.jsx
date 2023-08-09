@@ -1,11 +1,11 @@
-import { MdClose } from "react-icons/md";
-import { CartItemCard } from "./CartItemCard";
+import { MdClose } from "react-icons/md"
+import { CartItemCard } from "./CartItemCard"
 import styles from "../CartModal/style.module.scss"
 
 export const CartModal = ({ cartList, setIsVisible, removeProductCart, removeAllProductCart }) => {
    const total = cartList.reduce((prevValue, product) => {
-      return prevValue + product.price;
-   }, 0);
+      return prevValue + product.price
+   }, 0)
 
    return (
       <div role="dialog" className={styles.overlayBox}>
@@ -36,10 +36,10 @@ export const CartModal = ({ cartList, setIsVisible, removeProductCart, removeAll
          <div className={styles.total__value}>
             <div className={styles.header__total}>
                <p className="body sm total">Total</p>
-               <span className="body sm ">{total.toLocaleString('pt-BR', { style: "currency", currency: "BRL" })}</span>
+               <span className="body sm ">{total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>
             </div>
             <button className="headline" onClick={removeAllProductCart}>Remover todos</button>
          </div>
       </div>
-   );
-};
+   )
+}
