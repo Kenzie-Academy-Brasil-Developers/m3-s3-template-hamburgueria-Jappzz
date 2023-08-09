@@ -1,5 +1,6 @@
 .list__container{
     display: flex;
+    width: 100%;
 }
 
 .product__info{
@@ -8,14 +9,15 @@
     gap: 0.625rem;
 
     & > img{
-        width: 55px;
+        width: 3.4375rem;
         background-color: var(--grey-1);
         padding: 13px;
+        border-radius: 5px;
     }
 }
 
 .button{
-color: var(--grey-4);
+    color: var(--grey-4);
     background-color: transparent;
     height: min-content;
     border: none;

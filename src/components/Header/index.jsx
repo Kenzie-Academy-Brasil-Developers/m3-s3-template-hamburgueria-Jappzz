@@ -3,29 +3,33 @@ import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
 import styles from "../Header/style.module.scss"
 
-export const Header = ({ count, setIsVisible , setSearch}) => {
+export const Header = ({ count, setIsVisible, setSearch }) => {
    const [value, setValue] = useState("")
-   const submit = (e)=>{
+   const submit = (e) => {
       e.preventDefault()
       setSearch(value)
       setValue("")
 
    }
-
-      return (
-         <header className={styles.header__container}>
-            <img src={Logo} alt="Logo Kenzie Burguer" />
-            <div className={styles.div__container}>
-               <button className={styles.cart}
-                  onClick={() => setIsVisible(true)}>
-                  <MdShoppingCart size={21} />
-                  <span>
-                     {count}
-                  </span>
-               </button>
+   //quando atualiza a pagina ele fica uma estilização ja pronta com o carrinho e imagem na mesma div pois unica maneira que vi de estilizar e o window.innerWidth ele nao atualiza conforme a pagina vai aumentando
+   return (
+      <>
+         {window.innerWidth < 800 ?
+            <header className={styles.header__container}>
+               <div className={styles.header__logoButton}>
+                  <img src={Logo} alt="Logo Kenzie Burguer" />
+                  <div className={styles.div__container}>
+                     <button className={styles.cart}
+                        onClick={() => setIsVisible(true)}>
+                        <MdShoppingCart size={21} />
+                        <span>
+                           {count}
+                        </span>
+                     </button>
+                  </div>
+               </div>
                <form className={styles.form__container}
-                  onSubmit={submit}   
-               >
+                  onSubmit={submit}>
                   <input
                      required
                      placeholder="Digitar Pesquisa"
@@ -38,7 +42,35 @@ export const Header = ({ count, setIsVisible , setSearch}) => {
                      <MdSearch size={21} />
                   </button>
                </form>
-            </div>
-         </header>
-      )
-   }
+            </header> :
+            <header className={styles.header__container}>
+               <img src={Logo} alt="Logo Kenzie Burguer" className={styles.header__img} />
+               <div className={styles.div__container}>
+                  <button className={styles.cart}
+                     onClick={() => setIsVisible(true)}>
+                     <MdShoppingCart size={21} />
+                     <span>
+                        {count}
+                     </span>
+                  </button>
+                  <form className={styles.form__container}
+                     onSubmit={submit}>
+                     <input
+                        required
+                        placeholder="Digitar Pesquisa"
+                        type="text"
+                        value={value}
+                        onChange={(e) => setValue(e.target.value)}
+                     />
+                     <button type="submit"
+                        className={styles.button}>
+                        <MdSearch size={21} />
+                     </button>
+                  </form>
+               </div>
+            </header>
+         }
+
+      </>
+   )
+}

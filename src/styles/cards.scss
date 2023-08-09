@@ -1,14 +1,14 @@
 .list__container{
     display: flex;
-    flex-wrap: wrap;
     gap: 3.5rem;
+    flex-wrap: wrap;
     margin-top: 1.0625rem;
     padding: 0px 7.5rem;
 }
 
 .list__card{
     border: 2px solid var(--grey-1);
-    width: 18.75rem;
+    width: 300px;
     height: 21.875rem;
     border-radius: 5px;
     :focus{
@@ -48,5 +48,18 @@
     button{
         display: flex;
         max-width: fit-content  ;
+    }
+}
+
+@media (max-width: 800px){
+    .list__container{
+        display: flex;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding: 34px 16px;
+
+    }
+    .card__img{
+        width: 300px;
     }
 }

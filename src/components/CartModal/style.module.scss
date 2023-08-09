@@ -11,9 +11,9 @@
 .header__modal{
     display: flex;
     background-color: var(--color-primary);
-    width: 500px;
+    width: 31.25rem;
     justify-content: space-between;
-    padding: 13px 20px;
+    padding: 0.8125rem 1.25rem;
     align-items: center;
     border-radius: 5px 5px 0 0;
 
@@ -66,6 +66,14 @@
     & > p{
         color: var(--grey-6);
     }
-
-
+}
+@media(max-width: 800px){
+    .overlayBox{
+        align-items: center;
+        justify-content: start;
+        padding-top: 120px;
+    }
+    .header__modal, .cart__container, .total__value{
+        width: 330px;
+    }
 }
